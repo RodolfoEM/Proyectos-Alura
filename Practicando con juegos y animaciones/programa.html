@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- En HTML existe la etiqueta canvas(pizarra a utilizar) -->
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        let pantalla = document.querySelector("canvas"); // Variable para poder conectar el js con el html y traer el canvas
+        let pincel = pantalla.getContext("2d"); // Creamos una variable para poder dibujar apartir de pantalla, traemos el contenido, en 2d(ancho y largo)
+        // REllenamos todo el canvas de un color
+        pincel.fillStyle = "lightgrey"; // propiedad para dar color y estilo
+        pincel.fillRect(0,0,600,400); // fillReact es el método utilizado para crear la figura inicial. Los primeros parametros son para indicar el pinto de partida y los segundos para indicar hacia donde avanzara en los ejes Horizontal y vertical.
+        //Creamos una forma rectangular verde
+        pincel.fillStyle = "green"; // se establece el color en rojo
+        pincel.fillRect(0,0,200,400); // inicio 0 horizontal, avanza 200. inicia 0 vertical, avanza 400.
+        //Creamos una forma rectangular rojo
+        pincel.fillStyle = "red"; // se establece el color en rojo
+        pincel.fillRect(400,0,200,400); // inicio 400 horizontal, avanza 200. inicia 0 vertical, avanza 400.
+        // Dibujando un triangulo amarillo
+        pincel.fillStyle = "yellow";
+        pincel.beginPath(); // Iniciamos una ruta o dirección
+        pincel.moveTo(300, 200); // le decimos a donde debe moverse, en este caso le decimos que vaya al centro de la figura
+        pincel.lineTo(200, 400); // con este método le decimos que debe dibujar una linea con las coordenadas que le damos
+        pincel.lineTo(400, 400);
+        pincel.fill(); // pedimos que rellene la figura con el color predefinido(Yellow)
+        // Dibujando un circulo azul al centro
+        pincel.fillStyle = "blue"
+        pincel.beginPath();
+        pincel.arc(300,200,50,0,2*3.14); // La función arc sirve para graficar circunferencias(posición inicial(300,200), despues el radio del circulo(50), angulo inicial(0), angulo final(2*3.14))
+        pincel.fill(); // pedimos que rellene la figura con el color predefinido(Yellow)
+
+        // Investigar más en "2d canvas" en el browser
+    </script>
+</body>
+</html>

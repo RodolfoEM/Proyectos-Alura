@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- En HTML existe la etiqueta canvas(pizarra a utilizar) -->
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        let pantalla = document.querySelector("canvas"); // Variable para poder conectar el js con el html y traer el canvas
+        let pincel = pantalla.getContext("2d"); // Creamos una variable para poder dibujar apartir de pantalla, traemos el contenido, en 2d(ancho y largo)
+        // triangulo negro
+        pincel.fillStyle='black'; // Damos color a la figura
+        pincel.beginPath(); //Iniciamos el path
+        pincel.moveTo(50, 50); // Colocamos la posición inicial
+        pincel.lineTo(50, 400); // Línea vertical del triangulo
+        pincel.lineTo(400, 400); // Línea horizontal del triangulo
+        pincel.fill(); // finalizamos el rellenado de la figura
+
+        // triangulo interior blanco
+        pincel.fillStyle='white';
+        pincel.beginPath();
+        pincel.moveTo(100, 175);
+        pincel.lineTo(100, 350);
+        pincel.lineTo(275, 350);
+        pincel.fill();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol</title>
+</head>
+<body>
+    <h1>CALCULAR PUNTOS DE UN EQUIPO DE FUTBOL</h1>
+    <script>
+        function imprimir (frase) {
+            document.write(frase);
+            document.write("<br>");
+        };
+
+        let victorias = parseInt(prompt("Informe la cantidade de victorias:")); // parseInt convierte el tipo de texto a numerico.
+        let empates = parseInt(prompt("Informe la cantidade de empates:")); // parseInt convierte el tipo de texto a numerico.
+        let puntosTotales = (victorias * 3) + empates;
+
+        imprimir("El total de punto del equi es: " + puntosTotales);
+
+        if (puntosTotales > 28) {
+            imprimir("El equipo está mejor el año pasado.");
+        } else if (puntosTotales == 28) {
+            imprimir("El equipo está igual el año pasado.");
+        }else {
+            imprimir("El equipo está peor el año pasado.");
+        }
+
+
+
+    </script>
+</body>
+</html>

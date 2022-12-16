@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Calcular IMC</h1>
+    <script>
+        function imprimir (frase) {
+            document.write(frase);
+            document.write("<br>");
+        };
+
+        function calcularImc(peso, altura) {
+            return imc = peso / (altura * altura);
+        };
+
+        let peso = prompt("Cuál es tu peso? ");
+        let altura = prompt("Cuál es tu altura? ");
+        let nombre = prompt("Cuál es tu nombre? ");
+
+        let imcCalculado = calcularImc(peso, altura);
+        imprimir("El IMC calculado de " + nombre + " es: " + Math.round(imcCalculado));
+
+        if (calcularImc == !NaN) {
+            if (imcCalculado < 18.5) {
+                imprimir("Si IMC se clasifica como Abajo de lo recomendado segun la OMS");
+            } else if (imcCalculado > 18.5 && imcCalculado < 24.9) {
+                imprimir("Si IMC se clasifica como Intervalo normal segun la OMS");
+            } else if (imcCalculado <= 25){
+                imprimir("Si IMC se clasifica como Preobesidad segun la OMS");
+            } else {
+                imprimir("Si IMC se clasifica como Obesidad segun la OMS");
+            };
+        } else {
+            alert("Introduzca datos correctos")
+        };
+
+
+    </script>
+</body>
+</html>

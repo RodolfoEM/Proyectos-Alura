@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Grafica de Barras</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        // Arrays donde se guarda la información de los argumentos
+        var serie2009 = [6, 47, 41, 3, 3];
+        var serie2019 = [81, 9, 3, 3, 4];
+        var colores = ["blue","green","yellow", "red","gray"];
+
+        // Función que dibuja los gráficos
+        function dibujarRectangulo(x, y, base, altura, color) {
+            pincel.fillStyle=color;
+            pincel.fillRect(x,y, base, altura);
+            pincel.strokeStyle="black";
+            pincel.strokeRect(x,y, base, altura);
+        }
+        // Función que escribe el texto
+        function escribirTexto(x , y, texto) {
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(texto, x, y);
+        }
+        // Función que orquesata el armado de los gráficos.
+        function dibujarBarra(x, y, serie, color, texto) {
+
+            escribirTexto(x, y - 10, texto); // Lamamos a la funcion que escribe el texto y le pasamos los argumentos
+
+            let sumaAltura = 0; // Esta variable es auxiliar para poder construir el avance de los gráficos u que no se escriban en el mismo punto del eje Y
+            for(let i = 0; i < serie.length; i++) {
+                let altura = serie[i];
+                dibujarRectangulo(x,y + sumaAltura,50,altura,color[i]);
+                sumaAltura += altura;
+            };
+        };
+
+        dibujarBarra(50, 50, serie2009, colores, "2009");
+        dibujarBarra(150, 50, serie2019, colores, "2019");
+
+    </script>
+</body>
+</html>

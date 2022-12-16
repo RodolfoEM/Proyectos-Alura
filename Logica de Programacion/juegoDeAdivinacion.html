@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinación</title>
+</head>
+<body>
+    <h1>Juego de Adivinación.</h1>
+    <script>
+        function imprimir (frase) {
+            document.write(frase);
+            document.write("<br>");
+        };
+
+        let numeroPensado = Math.round(Math.random() * 10);
+        let intentos = 3;
+        let contador = 1;
+
+        while(contador <= intentos) {
+
+            let numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"));
+            if (numeroPensado == numeroLanzado) {
+                alert("Usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+                imprimir("Usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+                break;
+            } else if (numeroPensado > numeroLanzado){
+                alert("Usted erró, el número pensado era mayor. Le quedan " + (intentos-contador) + " intentos.");
+            } else {
+                alert("Usted erró, el número pensado era menor  Le quedan " + (intentos-contador) + " intentos.");
+            };
+            contador++;
+        };
+
+        imprimir("Fin del Juego.");
+
+
+
+    </script>
+
+</body>
+</html>

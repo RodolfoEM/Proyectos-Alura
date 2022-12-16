@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular tabla de multiplicar</title>
+</head>
+<body>
+    <h1>Programa: Tablas de multiplicar.</h1>
+    <script>
+        function imprimir (frase) {
+            document.write(frase);
+            document.write("<br>");
+        };
+
+        let tabla = parseInt(prompt("Coloca el número de la tabla a multiplicar:"))
+        let multiplicar = 1;
+
+        while (multiplicar <= 10) {  // Este es un loop de tipo while, el cual se ejecutará hasta que se cumpla la condición.
+            imprimir( "El resultado de multiplicar"+ tabla + " X " + multiplicar + " = " + (tabla * multiplicar));
+            multiplicar += 1;
+        };
+
+        imprimir(" ");
+        imprimir(" ");
+
+        for (i = 1; i <=10; i++){  // Este es un loop de tipo for, el cual se ejecuta hasta que se cumpla la condición.
+            imprimir( "El resultado de multiplicar"+ tabla + " X " + i + " = " + (tabla * i));
+        }
+
+    </script>
+</body>
+</html>

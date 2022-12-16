@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Año mundial de la FIFA<</title>
+</head>
+<body>
+    <h1>Programa: Año mundial de la FIFA</h1>
+    <script>
+        function imprimir (frase) {
+            document.write(frase);
+            document.write("<br>");
+        };
+
+        let anioMundial = 1930;
+        let limite = parseInt(prompt("Ingrese el año límite:"))
+
+        while ( anioMundial <= limite) {  // Este es un loop de tipo while, el cual se ejecutará hasta que se cumpla la condición.
+            imprimir("Hubo mundial de la FIFA en el año " + anioMundial);
+            anioMundial += 4;
+        }
+
+        imprimir("Fin");
+    </script>
+</body>
+</html>

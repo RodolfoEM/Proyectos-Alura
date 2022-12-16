@@ -1,0 +1,24 @@
+
+<script>
+    // Las funciones siempre terminan parentecis y pueden o no recibir un parametro dentro de los parentesis.
+    // Se recomienda por convención que la función sea nombrada por un verbo(saltarLinea, escribir, pegar, etc.) ya que por lo general una función ejecuta una acción.
+
+    function jumpLine() {
+        document.write("<br>");
+    };
+    // función que imprime un texto
+    function print(operation) {
+        document.write("La diferencia de edad entre Dany y yo es de: " + operation + " años");
+        jumpLine();
+    };
+
+    // print("Esto es un texto");
+    // print("Este es el resultado de una operación matemática: 5 + 4 = " + (5 + 4) );
+
+    let edadDann = 23;
+    let miEdad = 28;
+    let diferencia = miEdad - edadDann;
+
+    print(diferencia);
+
+</script>

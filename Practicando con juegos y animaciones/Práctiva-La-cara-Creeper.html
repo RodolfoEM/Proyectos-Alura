@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- En HTML existe la etiqueta canvas(pizarra a utilizar) -->
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        let pantalla = document.querySelector("canvas"); // Variable para poder conectar el js con el html y traer el canvas
+        let pincel = pantalla.getContext("2d"); // Creamos una variable para poder dibujar apartir de pantalla, traemos el contenido, en 2d(ancho y largo)
+        // Canvas
+        pincel.fillStyle = "white"; // propiedad para dar color y estilo
+        pincel.fillRect(0,0,600,400);
+        // Cara
+        pincel.fillStyle = "darkgreen"; // propiedad para dar color y estilo
+        pincel.fillRect(0,0,350,300); // fillReact es el método utilizado para crear la figura inicial. Los primeros parametros son para indicar el pinto de partida y los segundos para indicar hacia donde avanzara en los ejes Horizontal y vertical.
+        //Creamos una forma rectangular ojo izquierdo
+        pincel.fillStyle = "black"; // se establece el color
+        pincel.fillRect(50,50,90,90);
+        //Creamos una forma rectangular ojo derecho
+        pincel.fillRect(210,50,90,90);
+        // Nariz
+        pincel.fillRect(140,140,70,100);
+        // Parte de la boca izquierda
+        pincel.fillRect(100,190,40,110);
+        // Parte de la boca derecha
+        pincel.fillRect(210,190,40,110);
+    </script>
+</body>
+</html>
