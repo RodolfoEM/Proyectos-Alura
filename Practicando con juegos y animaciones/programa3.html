@@ -10,18 +10,48 @@
     <canvas width="600" height="400"></canvas>
 
     <script>
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        const colors = ["blue","red","green"]; // Utilizamos este array para guardar los colores iterables
+        let indiceColorActual = 0; // esta variable servira para hacer la iteración con el click derecho y el cambio de color
 
         pincel.fillStyle="grey";
         pincel.fillRect(0,0,600,400);
 
         function exhibirAlerta(evento) {
-            console.log(evento);
-            alert("Usted hizo un clic")
+            let x = evento.pageX - pantalla.offsetLeft; // pageX es la coordenada pero en base a toda la página, no solo del canvas, por eso se le resta lo que está fuera de la pantalla a los lados
+            let y = evento.pageY - pantalla.offsetLeft; // pagey es la coordenada pero en base a toda la página, no solo del canvas, por eso se le resta lo que está fuera de la pantalla hacia arriba
+
+            alert(`${x}, ${y}`);
         }
 
-        pantalla.onclick = exhibirAlerta; // En este caso no se coloca parentesis para que la función no se ejecute sino hasta que suceda el onClick.
+        function dibujarCirculo(evento) {
+            let x = evento.pageX - pantalla.offsetLeft; // pageX es la coordenada pero en base a toda la página, no solo del canvas, por eso se le resta lo que está fuera de la pantalla a los lados
+            let y = evento.pageY - pantalla.offsetLeft; // pagey es la coordenada pero en base a toda la página, no solo del canvas, por eso se le resta lo que está fuera de la pantalla hacia arriba
+
+            pincel.fillStyle = colors[indiceColorActual]; // Aquí le estamos pasando el array de colores y le decimos que tome el indice según el número de la variable "indiceColorActual"
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+
+            console.log(`${x}, ${y}`, colors);
+        }
+
+
+        function alterarColor() { // Esta función suma uno con cada click al la variable "indiceColorActual" y si es mayor o igual a la longitud del array de colores la devuelve a cero para poner el primer color
+            indiceColorActual++;
+            if(indiceColorActual >= colors.length) {
+                indiceColorActual = 0;
+            }
+            console.log(indiceColorActual);
+            return false;
+        }
+
+        pantalla.oncontextmenu = alterarColor;
+
+        // Dibuja un circulo cada que damos un clic
+        pantalla.onclick = dibujarCirculo; // En este caso no se coloca parentesis para que la función no se ejecute sino hasta que suceda el onClick.
     </script>
 </body>
 </html>
