@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Interactivo</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        // Este es un objetivo que itera en su posición y si se da clic en el centro sale un letrero de que se acertó
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle="lightgrey";
+        pincel.fillRect(0,0,600,400);
+        let radio = 10;
+        let xAleatorio;
+        let yAleatorio;
+
+        function disenarCircunferencia(x, y, radio, color) {
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x,y,radio,0,2*Math.PI)
+            pincel.fill();
+        }
+
+        function limpiarpantalla(){
+            pincel.clearRect(0,0,600,400); // SIrve para limpiar la pantalla del canvas
+        }
+
+
+        function disenarObjetivo(x,y){ // Aquí creamos 3 circulos concentricos de acuerdo a los argumentos recibidos
+            disenarCircunferencia(x,y,radio + 20,"red");
+            disenarCircunferencia(x,y,radio + 10,"white");
+            disenarCircunferencia(x,y,radio,"red");
+        }
+
+        function sortearPosicion(maximo){ // Aquí creamos un número aleatorio que sea menor al ancho y alto del canvas.
+            return Math.floor(Math.random()*maximo) // floor redondea para abajo. para que el número no se salga del máximo
+        }
+
+        let x = 0;
+        function actualizarPantalla(){
+            limpiarpantalla();
+            xAleatorio = sortearPosicion(600); // Aquí se recibe un valor aleatorio menor al ancho máximo del canvas
+            yAleatorio = sortearPosicion(400); // Aquí se recibe un valor aleatorio menor al ancho máximo del canvas
+            disenarObjetivo(xAleatorio,yAleatorio);
+            x ++;
+        }
+
+
+        function disparar(evento){
+
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+
+            if((x < xAleatorio + radio) &&
+               (x > xAleatorio - radio) &&
+               (y < yAleatorio + radio) &&
+               (y > yAleatorio - radio)) { // En este If validamos si el clic se está realizando dentro del circulo menor
+                   alert("Tiro Certero");
+            }
+        }
+
+        setInterval(actualizarPantalla,1000); // Asignamos un intervalo de 1000 milisegundos para que se ejecute un nuevo objetivo
+        pantalla.onclick = disparar;
+
+
+</script>
+</body>
+</html>

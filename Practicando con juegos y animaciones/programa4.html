@@ -10,6 +10,7 @@
     <canvas width="600" height="400"></canvas>
 
     <script>
+        // Este es un circulo que se mueve de lado a lado en el canvas
         let pantalla = document.querySelector("canvas");
         let pincel = pantalla.getContext("2d");
 
@@ -23,7 +24,25 @@
             pincel.fill();
         }
 
-        disenarCircunferencia(20,20,10);
+        function limpiarpantalla(){
+            pincel.clearRect(0,0,600,400); // SIrve para limpiar la pantalla del canvas
+        }
+
+        let x = 0;
+        let sentido = 1;
+        function actualizarPantalla(){
+            limpiarpantalla();
+            if(x > 600) {
+                sentido = -1;
+            } else if(x < 0){
+                sentido = 1;
+            }
+            disenarCircunferencia(x,20,10);
+            x += sentido;
+        }
+        setInterval(actualizarPantalla,10); // setIterval establece el periodo de tiemp que pasa entre cada interacción.
+
+
 
 </script>
 </body>
