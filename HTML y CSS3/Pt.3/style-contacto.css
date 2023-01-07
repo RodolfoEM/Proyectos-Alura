@@ -1,3 +1,4 @@
+/*Header*/
 header {
     background: #bbbbbb;
     padding: 20px 0;
@@ -33,51 +34,35 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     text-decoration: underline; /* underline subraya el texto*/
 }
 
-.products {
+/*Form*/
+main {
     width: 940px;
     margin: 0 auto;
-    padding: 50px;
 }
 
-.products li{
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 30%;
-    margin: 0 1.5%;
-    padding: 30px 20px;
-    box-sizing: border-box; /*Esto evita que haya un desbordamiento y que el padding sea conciderado dentro del 30% de width que se definió previamente*/
-    border: solid 2px black;
-    border-radius: 10px;
+form {
+    margin: 40px 0;
 }
 
-.products li:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre este elemento*/
-    border-color: #c78c19;
-}
-
-.products li:hover h2{ /* Este estiulo se activa cuando damos clic al elemento*/
-    font-size: 33px;
-}
-
-.products li:active { /* Este estiulo se activa cuando damos clic al elemento*/
-    border-color: #088c19;
-}
-
-.products h2 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.detail-product{
-    font-size: 18px;
-}
-
-.price {
+form label, form p{
+    display: block;
     font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
+    margin: 0 0 10px;
 }
 
+.input-padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+
+/*Footer*/
 footer {
     text-align: center;
     background: url(./imagenes/imagenes/bg.jpg); /*Aquí estamos colocando una imagen como fondo*/
