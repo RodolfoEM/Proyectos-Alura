@@ -1,3 +1,8 @@
+/* Aqui colocamos el font de google fonts*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* Header */
 header {
     background: #bbbbbb;
@@ -72,7 +77,7 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     padding: 30px;
 }
 
-ul{
+section ul{
     display: inline-block;
     vertical-align: top; /* Esto permite que el texto se alinie a la parte superior y no se quede hasta abajo*/
     width: 20%;
@@ -83,8 +88,24 @@ ul{
     font-style: italic;
 }
 
+/* Ubicación */
+.map p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+.map {
+    padding: 3em 0; /*3em es 3 el tamaño de la fuente configurada por defecto*/
+}
+
+/* Diferenciales*/
 .diferfencials-image{
     width: 60%;
+}
+
+/* Video */
+.video {
+    width: 560px; /*El mismo ancho que el video insertado*/
+    margin: 1em auto; /*Esto permite centrar el video dentro del div*/
 }
 
 /* Footer */
