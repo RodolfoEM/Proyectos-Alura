@@ -21,7 +21,7 @@
             </h1>
             <nav>
                 <ul>
-                    <li><a href="../Pt.1/index.html">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./productos.html">Products</a></li>
                     <li><a href="./contacto.html">Contact</a></li>
                 </ul>
@@ -32,7 +32,7 @@
     <img class="banner" src="./benner/banner.jpg" alt="Barbería Alura"><!-- una vez que asignamos un ID a un elemento no se puede volver a asignar a otro elemento de la misma página -->
 
     <main>
-        <section class="main-block">
+        <section class="main-section">
             <h2 class="main-title">Sobre la Barbería Alura</h2>
             <img class="tools" src="./imagenes/imagenes/utensilios[1].jpg" alt="Utencilios de barbería">
             <p>Ubicada en el corazón de la ciudad, la <strong>Barbería Alura</strong> trae para el mercado lo que hay de mejor para su cabello y barba. Fundada en 2020, la Barbería Alura ya es destaque en la ciudad y conquista nuevos clientes diariamente.</p>
@@ -43,27 +43,33 @@
         <section class="map">
             <h3 class="main-title">Nuestra Ubicación</h3>
             <p>Nuestro establecimiento está ubicado en el corazon de la ciudad</p>
-            <!-- Incorporación del mapa de la Barberia -->
-            <!-- iframe es una etiqueta que permite agregar elementos externos como mapas, videos, gif y otros elementos -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4499774666588!2d-46.63452058736471!3d-23.588189868463395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Education%20and%20Innovation!5e0!3m2!1ses-419!2smx!4v1674191190712!5m2!1ses-419!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-container">
+                <!-- Incorporación del mapa de la Barberia -->
+                <!-- iframe es una etiqueta que permite agregar elementos externos como mapas, videos, gif y otros elementos -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4499774666588!2d-46.63452058736471!3d-23.588189868463395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Education%20and%20Innovation!5e0!3m2!1ses-419!2smx!4v1674191190712!5m2!1ses-419!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
 
         <section class="diferencials">
             <h3 class="main-title">Diferenciales</h3>
-            <!-- Lista desordenada -->
-            <ul class="list-item">
-                <li>Atención personalizada a los clientes</li>
-                <li>Espacio diferenciado</li>
-                <li>Localización</li>
-                <li>Profesionales calificados</li>
-            </ul>
-            <img src="./diferencials/diferenciales.jpg" alt="hombre en barbería" class="diferfencials-image">
+
+            <div class="diferencials-content">
+                <!-- Lista desordenada -->
+                <ul class="diferencials-list">
+                    <li class="items">Atención personalizada a los clientes</li>
+                    <li class="items">Espacio diferenciado</li>
+                    <li class="items">Localización</li>
+                    <li class="items">Profesionales calificados</li>
+                    <li class="items">Puntualidad</li>
+                    <li class="items">Limpieza</li>
+                </ul><img src="./diferencials/diferenciales.jpg" alt="hombre en barbería" class="diferfencials-image">
+            </div>
+            <div class="video">
+                <!-- Incorporación del video de Youtube -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </section>
 
-        <div class="video">
-            <!-- Incorporación del video de Youtube -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
     </main>
 
     <footer>

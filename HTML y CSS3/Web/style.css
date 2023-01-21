@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Header */
+/* 👀 Aqui empieza el Header de la barra de navegación */
 header {
     background: #bbbbbb;
     padding: 20px 0;
@@ -39,10 +39,17 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     text-decoration: underline; /* underline subraya el texto*/
 }
 
-/* body */
+/* 👀 Aquí empieza el boy de index*/
 
 .banner {
     width: 100%; /* una vez que asignamos un ID a un elemento no se puede volver a asignar a otro elemento de la misma página */
+}
+
+.main-section {
+    padding: 3em 0;
+    background: #fefefe;
+    width: 940px;
+    margin: 0 auto;
 }
 
 .main-title{
@@ -51,9 +58,14 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     margin: 0 0 1em;
     clear: left;
 }
+/*
+.main-title::first-letter { /*Este seudoelemento solo afecta a la primer letra
 
-.main-block p {
+}
+*/
+.main-section p {
     margin: 0 0 1em;
+    text-align: justify;
 }
 
 .tools {
@@ -70,34 +82,51 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     font-style: italic;
 }
 
-/* Diferenciales */
-
-.diferencials{
-    background: white;
-    padding: 30px;
-}
-
-section ul{
-    display: inline-block;
-    vertical-align: top; /* Esto permite que el texto se alinie a la parte superior y no se quede hasta abajo*/
-    width: 20%;
-    margin-right: 15%;
-}
-
-.list-item{
-    font-style: italic;
-}
 
 /* Ubicación */
+.map-container{ /*Centramos correctamente el mapa*/
+    width: 940px;
+    margin: 0 auto;
+}
 .map p{
     margin: 0 0 2em;
     text-align: center;
 }
 .map {
     padding: 3em 0; /*3em es 3 el tamaño de la fuente configurada por defecto*/
+    background: linear-gradient(#fefefe, #888888); /*Esto permite crear un degradado(angulo, color1(%), color 2, color"n*)*/
+    /*background: radial-gradient(orange 50%, blue, red);/*Esta es ptra forma de crear un degradado pero circular*/
 }
 
 /* Diferenciales*/
+.diferencials{
+    padding: 3em 0;
+    background: #888888;
+}
+
+.diferencials-content {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.diferencials-list {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.items {
+    line-height: 1.5; /*Sirve para agregar un espacio entre las lineas de cada objeto de la lista. 1.5 es la medida*/
+}
+
+.items::before { /*Esto agrega algo antes del elemento dentro de la clase "item*/
+    content: "⭐";
+}
+
+.items:first-child { /*Esta es una seudoclase. Esto es para aplicar el estilo solo al primer elemento de la clase "item*/
+    font-weight: bold;
+}
+
 .diferfencials-image{
     width: 60%;
 }
@@ -107,6 +136,109 @@ section ul{
     width: 560px; /*El mismo ancho que el video insertado*/
     margin: 1em auto; /*Esto permite centrar el video dentro del div*/
 }
+
+/* 👀 Aquí empiezan los estilos de producto*/
+.products {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.products li{
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 30%;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box; /*Esto evita que haya un desbordamiento y que el padding sea conciderado dentro del 30% de width que se definió previamente*/
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.products li:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre este elemento*/
+    border-color: #c78c19;
+}
+
+.products li:hover h2{ /* Este estiulo se activa cuando damos clic al elemento*/
+    font-size: 33px;
+}
+
+.products li:active { /* Este estiulo se activa cuando damos clic al elemento*/
+    border-color: #088c19;
+}
+
+.products h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.detail-product{
+    font-size: 18px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 👀 Aquí empiezan los estilos de contacto*/
+/*Form*/
+
+form {
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all; /* sirve para que la transición sea un poco más lenta, el all hace referencia a que debe aplicar para todas las propiedades*/
+    cursor: pointer; /* Hace que el cursor cambie a la mano*/
+}
+.enviar:hover {
+    background-color: darkorange;
+    transform: scale(1.2) rotate(360deg); /*Permite aumentar el tamaño en 20% cuando el mouse se posiciona encima, el segundo elemento rotate tambien es una función que permite retor el elemento y recibe grados como instrucción*/
+}
+
+table {
+    margin: 40px 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 8px 15px;
+}
+
 
 /* Footer */
 footer {
