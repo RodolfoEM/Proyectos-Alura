@@ -57,7 +57,14 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
+    transition: 400ms;
 }
+
+.main-title:hover {
+    color: rgba(0, 0, 255, 0.7); /*El cuarto valor es el % de la opacidad*/
+    font-size: 35px;
+}
+
 /*
 .main-title::first-letter { /*Este seudoelemento solo afecta a la primer letra
 
@@ -129,6 +136,12 @@ nav a:hover { /* hover captura el movimiento del mouse cuando se posiciona sobre
 
 .diferfencials-image{
     width: 60%;
+    transition: 400ms;
+    box-shadow: 10px 10px 10px 10px black; /* Los primeros valores son para el ancho de la sombra arriba y abajo, el tercero para la difuminación, el cuarto para la expansión y el quinto para el color .Los números en positivo son hacia abajo y derecha de la imagen*/
+}
+
+.diferfencials-image:hover {
+    opacity: 0.3;
 }
 
 /* Video */
@@ -252,3 +265,67 @@ footer {
     font-size: 13px;
     margin: 20px;
 }
+
+/* Mediaqueris */
+
+@media screen and (max-width:480px) {
+    main {
+        padding: 2px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .box ul {
+        padding-bottom: 15px;
+    }
+
+    .box, .main-section, .map-container, .diferencials-content, .video { /*Ajustando el width a "auto" podemos hacer responsive nuestra página web */
+        width: auto;
+    }
+
+    .diferencials-list, .diferfencials-image {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .products li {
+        display: block;
+        margin: 10px 0;
+    }
+    .copyright {
+        padding-bottom: 10px;
+        margin: 0;
+    }
+}
+
+
+/*---------------------------------------------------------------*/
+/*Otras notas*/
+/*
+main > p { // Esto afecta da estilos a todos las etiquetas "p" hijas de main, las "p" de niveles inferiores no las modifica
+    estilo
+}
+
+img + p { // Esto afecta da estilos a las etiquetas "p" que este despues de la etiqueta "img"
+    estilo
+}
+
+img ~ p { // Esto da estilo a todas las etiquetas "p" que están despues de las etiquetas "img"
+    estilo
+}
+
+.principal p:not(#mision) { // Aquí se puede dar estilo a todas las etiquetas "p" dentro de la clase "principal", pero excluyendo las que tienen el #id mision
+    estilo
+}
+
+img {
+    width: calc(40% - (26px * 4) ; // Esto permite establecer el tamaño de un elemento tomando en cuenta un calculo que nosotros le demos
+}
+
+*/
