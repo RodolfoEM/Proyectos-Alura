@@ -1,0 +1,112 @@
+/* Header */
+.headerPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerPrincipal-nav {
+    display: flex;
+}
+
+/* Main */
+.contenidoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenidoPrincipal-cursos-link {
+    display: flex;
+    width: 23%;
+}
+
+.videoSobre .container {
+    display: flex;
+}
+
+.videoSobre-sobre {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.videoSobre-video {
+    flex-grow: 2;
+    flex-shrink: 2; /*Esto permite que al reducir el tamaño de la pantalla se vaya reduciendo 2 veces menos*/
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 2;
+}
+
+/* Footer */
+.rodapePrincipal-navMap-list {
+    display: flex;
+    flex-direction: column;
+    height: 255px;
+    flex-wrap: wrap;
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 75%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .headerPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+
+    .headerPrincipal-nav {
+        flex-direction: column;
+    }
+
+    .headerPrincipal-nav-link-app {
+        order: -1; /*Permite que se ordene antes del primero. El valor default de los items es 0*/
+    }
+
+    .contenidoPrincipal-cursos {
+        flex-direction: column;
+    }
+
+    .contenidoPrincipal-cursos-link {
+        width: 100%;
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+    .rodapePrincipal-navMap-list {
+        height: auto;
+        flex-wrap: nowrap;
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+    }
+
+    .rodapePrincipal-patrocinadores-list {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+}
