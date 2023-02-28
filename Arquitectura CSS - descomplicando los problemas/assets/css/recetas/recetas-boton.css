@@ -1,0 +1,12 @@
+.receta__boton{
+    background: #DA2B1F;
+    border: none;
+    border-radius: 5px;
+    color: #fdfdfd;
+    padding: 1rem;
+    transition: all .1s ease-in-out; /*Esto hace una transición suave al poner el cursor sobre el botón*/
+}
+.receta__boton:hover{
+    cursor: pointer;
+    background: #9f1010;
+}
