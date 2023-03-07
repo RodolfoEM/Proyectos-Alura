@@ -24,3 +24,11 @@ console.log(paisesDisponibles);
     console.log(paisesDisponibles);
 
 }
+
+// Mostrar un elemento especifico dentro de la lista
+console.log(paisesDisponibles[0]);
+console.log(ciudadesDisponibles[1]);
+
+// Uso de splice(elimina y a la ves agrega elementos a la lista)
+paisesDisponibles.splice(1,2, 'Venzuela', 'Paraguay') // Los numeros indican la posición en donde se encuentran los elementos que se rquieren eliminar
+console.log(paisesDisponibles);
