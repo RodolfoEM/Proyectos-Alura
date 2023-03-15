@@ -1,3 +1,6 @@
+import checkComplete from "./components/ckeckComplete.js";
+import trashItem from "./components/deleteTask.js";
+
 const btn = document.querySelector('[data-form-btn]');
 
 
@@ -17,7 +20,7 @@ const btn = document.querySelector('[data-form-btn]');
         titleTask.classList.add("task")
         titleTask.innerText = value
 
-        //task.innerHTML = content;
+        //Aquí realizamos el armado de los items que se irán agregando
         list.appendChild(task);
         task.appendChild(taskContainer);
         taskContainer.appendChild(checkComplete());
@@ -27,25 +30,4 @@ const btn = document.querySelector('[data-form-btn]');
 
     btn.addEventListener("click", createTask);
 
-    // Arrow functions o funciones anónimas
-    const checkComplete = () => {
-        const i = document.createElement("i");
-        i.classList.add("far", "fa-check-square", "icon"); // Se puede agregar más de una clase separando con coma y entre comillas la clase
-        i.addEventListener("click", completeTask);
-        return i;
-    }
-
-    const completeTask = (event) => {
-        const element = event.target;
-        element.classList.toggle("fas"); // toggle valida si la clase existe, y si existe la quita y si no existe la pone
-        element.classList.toggle("completeIcon")
-        element.classList.toggle("far");
-    }
-
-    const trashItem = () => {
-        const i = document.createElement("i");
-        i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon"); // Se puede agregar más de una clase separando con coma y entre comillas la clase
-
-        return i;
-    }
 })();
