@@ -34,7 +34,8 @@
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="password" id="password" class="input" type="password" placeholder="Contraseña" required minlength="6" maxlength="12">
+                        <!-- para el caso del input de tipo password su puede controlar el mínimo o máximo de caracteres con minlength="" y maxlength="" / patern obtiene a traves de expresiones regulares el mínimo, qué tipo de caracteres-->
+                        <input name="password" id="password" class="input" type="password" placeholder="Contraseña" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,12}$" title="Al menos 6 caracteres, debe contener al menos una minúscula, una mayúsculas, un número y un símbolo especial">
                         <label class="input-label" for="password">Contraseña</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -42,7 +43,7 @@
                 <fieldset>
                     <legend class="form__label">Información personal</legend>
                     <div class="input-container">
-                        <input name="birth" id="birth" class="input" type="text" placeholder="Fecha de nacimento">
+                        <input name="birth" id="birth" class="input" type="date" placeholder="Fecha de nacimento" required data-tipo="naciminiento" >
                         <label class="input-label" for="birth">Fecha de nacimiento</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -74,5 +75,6 @@
             </form>
         </section>
     </main>
+    <script src="js/Validaciones.js"></script>
 </body>
 </html>
