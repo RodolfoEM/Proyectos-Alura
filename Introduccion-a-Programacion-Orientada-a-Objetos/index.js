@@ -1,46 +1,6 @@
-// Una clase es el molde de un objeto. Este puede contener propiedades y/o métodos
-class Cliente {
-    nombreCliente; // este es una propiedad
-    dniCliente;
-    RFC;
-
-    constructor() {
-        this.nombreCliente = ""; // este es una propiedad
-        this.dniCliente = "";
-        this.RFC = "";
-    }
-}
-
-class CuentaCorriente {
-    numero; // este es una propiedad
-    #saldo; // Con el simbolo # definimos como privada la variable
-    agencia;
-
-    constructor() { // Esto sirve para agreegar un valor defaul
-        this.numero = ""
-        this.#saldo = 0;
-        this.agencia = ""
-    }
-
-    depositoEnCuenta(valor) { // este es un método
-        if(valor > 0){
-            this.#saldo += valor;
-            return this.#saldo
-        }
-    }
-
-    retirarDeCuenta(valor) { // este es un método
-        if(this.#saldo >= valor){
-            this.#saldo -= valor;
-            return this.#saldo
-        }
-    }
-
-        verSaldo() { // Este método nos permite retornar el valor de nuestro atributo privado "saldo"
-            return this.#saldo;
-        }
-}
-
+// Importacion de Clases
+import {CuentaCorriente} from "./CuentaCorriente.js"
+import {Cliente} from "./Cliente.js"
 // Aquí estamos realizando la creacion de una instancia apartir de las clases que ya hemos generado
 const cliente1 = new Cliente();
 cliente1.nombreCliente = "José"
@@ -68,5 +28,3 @@ const cuentaDeLeonardo = new CuentaCorriente(); // Al no definir nada para esta 
 cuentaDeLeonardo.depositoEnCuenta(200);
 let saldo = cuentaDeLeonardo.verSaldo(); //Aquí podemos obtener la información de nuestro saldo pese a ser un atributo privado
 console.log(`El saldo actual de la cuenta es ${saldo}`);
-
-
