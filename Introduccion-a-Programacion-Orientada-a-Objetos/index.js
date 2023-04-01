@@ -39,7 +39,7 @@ clienteMaria.RFC = "MPRO002803MSJÑ00"
 const cuentaDeMaria = new CuentaCorriente();
 cuentaDeMaria.numero = "09";
 cuentaDeMaria.agencia = "100";
-cuentaDeMaria.cliente = clienteMaria;
+cuentaDeMaria.setCliente = clienteMaria;
 
 let saldoDeMaria = cuentaDeMaria.verSaldo(); //Aquí podemos obtener la información de nuestro saldo pese a ser un atributo privado
 console.log(`El saldo actual de la cuenta(Cuenta de Maria) es ${saldoDeMaria}`);
@@ -50,3 +50,4 @@ console.log(`El saldo actual de la cuenta(Cuenta de Leonardo) es ${saldoDeLeonar
 saldoDeMaria = cuentaDeMaria.verSaldo(); // Consultamos nuevamente el saldo de la cuenta de Maria
 console.log(`El saldo actual de la cuenta(Cuenta de Maria) es ${saldoDeMaria}`); // Consultamos nuevamente el saldo de la cuenta de Maria
 
+console.log(cuentaDeMaria.getCliente);// Aquí mostramos el valor del atributo privado de cliente en la cuenta corriente.
