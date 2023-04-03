@@ -37,4 +37,11 @@ console.log(`El saldo actual de la cuenta(Cuenta de Leonardo) es ${saldoDeLeonar
 saldoDeMaria = cuentaDeMaria.verSaldo(); // Consultamos nuevamente el saldo de la cuenta de Maria
 console.log(`El saldo actual de la cuenta(Cuenta de Maria) es ${saldoDeMaria}`); // Consultamos nuevamente el saldo de la cuenta de Maria
 
-console.log(cuentaDeMaria.getCliente);// Aquí mostramos el valor del atributo privado de cliente en la cuenta corriente.
+console.log(cuentaDeMaria.cliente);// Aquí mostramos el valor del atributo privado de cliente en la cuenta corriente.
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// Consultar un atributo estático:
+console.log(CuentaCorriente.cantidadCuentas);
+
+

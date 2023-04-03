@@ -8,6 +8,7 @@ export class CuentaCorriente {
     numero; // este es una propiedad
     agencia;
     #saldo; // Con el simbolo # definimos como privada la variable
+    static cantidadCuentas = 0; // Este es un atributo estático(general o común para todas las clases)
 
     set cliente(valor){ // Este método sirve para asignar un valor a un objeto privado
         if(valor instanceof Cliente){ // Aquí validamos si el valor que le estamos pasando a cliente está dentro de la clase Cliente, en caso de que no, no se asigna. Esta es una forma de proteger los atributos privados.
@@ -24,6 +25,7 @@ export class CuentaCorriente {
         this.numero = numero;
         this.agencia = agencia;
         this.#saldo = 0;
+        CuentaCorriente.cantidadCuentas++;
         // this.#cliente = cliente; // aquí realizamos la unión de una clase con otra, en este caso cuenta corriente con cliente.
     }
 
