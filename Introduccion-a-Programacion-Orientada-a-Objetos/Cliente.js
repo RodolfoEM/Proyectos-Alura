@@ -5,9 +5,9 @@ export class Cliente {
     dniCliente;
     RFC;
 
-    constructor() {
-        this.nombreCliente = ""; // este es una propiedad
-        this.dniCliente = "";
-        this.RFC = "";
+    constructor(nombreCliente, dniCliente, RFC) {
+        this.nombreCliente = nombreCliente; // este es una propiedad
+        this.dniCliente = dniCliente;
+        this.RFC = RFC;
     }
 }
