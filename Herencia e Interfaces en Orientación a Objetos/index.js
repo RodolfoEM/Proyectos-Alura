@@ -58,4 +58,5 @@ console.log(gerente.verBonificacion());
 console.log(director.verBonificacion());
 */
 
-console.log(SistemaAutenticacion.login(empleado, "012345"));
+console.log(SistemaAutenticacion.login(empleado, "12345"));
+console.log(SistemaAutenticacion.login(gerente, "1"));

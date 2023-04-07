@@ -16,7 +16,7 @@ export class Cliente
         this.#clave = clave;
     }
 
-    get clave(){
-        return this.#clave;
+    autenticable(clave){ //Esta es un método poliformico que sirve para conectar con la clase SistemaAutenticacion
+        return clave === this.#clave;
     }
 }
