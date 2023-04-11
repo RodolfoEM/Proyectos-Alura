@@ -9,7 +9,6 @@ const listaClientes = () =>
     );
 
 const crearCliente = (nombre, email) => {
-  console.log(nombre, "e", email);
   return fetch("http://localhost:3000/perfil", {
     method: "POST", // Dentro del objeto de fetch colocamos el tipo de petición
     headers: { //Dentro de headers definimos el tipo de contenido que enviaremos.
@@ -19,7 +18,14 @@ const crearCliente = (nombre, email) => {
   });
 };
 
+const eliminarCliente = (id) => {
+  return fetch(`http://localhost:3000/perfil/${id}`, {
+    method: "DELETE"
+});
+}
+
 export const clientServices = {
   listaClientes,
   crearCliente,
+  eliminarCliente,
 };
