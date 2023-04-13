@@ -22,10 +22,30 @@ const eliminarCliente = (id) => {
   return fetch(`http://localhost:3000/perfil/${id}`, {
     method: "DELETE"
 });
+};
+
+const detalleCliente = (id) => {
+  return fetch(`http://localhost:3000/perfil/${id}`)
+  .then((respuesta) => respuesta.json()
+  );
+};
+
+const actualizarCliente = (nombre, email, id) => {
+  return fetch(`http://localhost:3000/perfil/${id}`, {
+    method: "PUT", // Dentro del objeto de fetch colocamos el tipo de petición, en este caso es un envió
+    headers: { //Dentro de headers definimos el tipo de contenido que enviaremos.
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ nombre, email}) // Aquí definimos el contenido que enviaremos. JSON.stringify permite convertir a texto el objeto ya que es el formato que usa http.
+  })
+  .then( respuesta => respuesta)
+  .catch(err => console.log(err));
 }
 
 export const clientServices = {
   listaClientes,
   crearCliente,
   eliminarCliente,
+  detalleCliente,
+  actualizarCliente
 };
