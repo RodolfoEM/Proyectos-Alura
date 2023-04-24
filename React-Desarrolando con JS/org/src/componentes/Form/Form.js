@@ -1,6 +1,8 @@
 import "./Form.css"
 import TextField from "../TextField/TextField.js"
 import OptionsList from "../OptionsList/OptionsList.js"
+import Button from "../Button/Button.js"
+
 const Form = () => {
     return  <section className="form" >
                 <form>
@@ -8,7 +10,8 @@ const Form = () => {
                     <TextField titulo="Nombre" placeholder="Ingresar nombre"/>
                     <TextField titulo="Puesto" placeholder="Ingresar puesto"/>
                     <TextField titulo="Foto" placeholder="Ingresar enlace de foto"/>
-                    <OptionsList></OptionsList>
+                    <OptionsList/>
+                    <Button texto="Crear" />
                 </form>
             </section>
 }
