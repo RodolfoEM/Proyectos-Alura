@@ -4,8 +4,14 @@ import OptionsList from "../OptionsList/OptionsList.js"
 import Button from "../Button/Button.js"
 
 const Form = () => {
+
+    const handleShipping = (evento) => {
+        evento.preventDefault();
+        console.log("Manejar envío", evento);
+    }
+
     return  <section className="form" >
-                <form>
+                <form onSubmit={handleShipping}>
                     <h2>Rellena el formulario para crear el colaborador.</h2>
                     <TextField titulo="Nombre" placeholder="Ingresar nombre"/>
                     <TextField titulo="Puesto" placeholder="Ingresar puesto"/>
