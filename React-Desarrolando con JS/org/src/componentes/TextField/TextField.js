@@ -3,12 +3,13 @@ import "./TextField.css"
 
 const TextField = (props) => { /* Aquí recibimos como parámetro las propiedades que enviemos desde el componente que nos manda a llamar. En este caso recibimos el nombre y los placeholders como un objeto */
 
-    const[valor, setValor] = useState("Harland")
+    const[valor, actualizarValor] = useState("")
     console.log("Datos: ", props);
     const placeholderModificado = `${props.placeholder}...` /* Se pueden crear constantes y variables y estas utilizarlas dentro de nuestras etiquetas */
 
     const manejarCambio = (e) => {
-        console.log("cambio", e);
+        console.log("cambio", e.target.value);
+        props.actualizarValor(e.target.value);
     }
 
     return <div className="text-field">
@@ -16,7 +17,7 @@ const TextField = (props) => { /* Aquí recibimos como parámetro las propiedade
         <input
             placeholder={placeholderModificado}
             required={props.required}
-            value={valor}
+            value={props.valor}
             onChange={manejarCambio}
         /> {/* Aquí utilizamos una constante que creamos arriba y que modifica el placeholder que se recibe como argumento*/}
     </div>
