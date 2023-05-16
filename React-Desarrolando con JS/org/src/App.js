@@ -3,7 +3,7 @@ import './App.css';
 import Form from './componentes/Form/Form';
 import Header from './componentes/Header/Header.js';
 import MyOrg from './componentes/MyOrg/MyOrg';
-
+import Team from './componentes/Team/Team';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
       <Header/>
       {showForm && <Form />}
       <MyOrg cambiarMostrar={cambiarMostrar} />
+      <Team />
     </div>
   );
 }
