@@ -1,6 +1,5 @@
 .team{
     width: 100%;
-    background-color: #D9F7E9;
     padding: 32px; /*AL colocar este padingo se desborda el elemento*/
     box-sizing: border-box;/*Para evitar que se desborde el elemento por el padding, colocamos esta propiedad*/
     text-align: center;
@@ -10,7 +9,7 @@
 .team h3{
     font-weight: 400;
     color: #212121;
-    border-bottom: 4px solid #57c278;
+    border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
 }

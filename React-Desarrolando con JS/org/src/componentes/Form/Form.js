@@ -4,7 +4,7 @@ import TextField from "../TextField/TextField.js"
 import OptionsList from "../OptionsList/OptionsList.js"
 import Button from "../Button/Button.js"
 
-const Form = () => {
+const Form = (props) => {
 
     //Estos son los diferentes estados:
     const [nombre, actualizarNombre] = useState("");
@@ -44,7 +44,10 @@ const Form = () => {
                         required
                         valor={foto}
                         actualizarValor={actualizarFoto} />
-                    <OptionsList valor={equipo} actualizarEquipo={actualizarEquipo} />
+                    <OptionsList
+                        valor={equipo}
+                        actualizarEquipo={actualizarEquipo}
+                        teams={props.teams} />
                     <Button texto="Crear" />
                 </form>
             </section>
