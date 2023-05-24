@@ -12,15 +12,19 @@ const Form = (props) => {
     const [foto, actualizarFoto] = useState("");
     const [equipo, actualizarEquipo] = useState("");
 
+    //Destructuración de datos
+    const {registrarColaborador} = props
+
     const handleShipping = (evento) => {
         evento.preventDefault();
-        console.log("Manejar envío", evento);
+        // console.log("Manejar envío", evento);
         let datosAEnviar = {
             nombre:nombre,
             puesto: puesto,
-            foto: foto
+            foto: foto,
+            equipo:equipo
         }
-        console.log(datosAEnviar);
+        registrarColaborador(datosAEnviar)
     }
 
     return  <section className="form" >
