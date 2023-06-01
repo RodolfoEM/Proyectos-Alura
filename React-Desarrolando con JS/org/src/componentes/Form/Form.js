@@ -1,8 +1,9 @@
 import { useState } from "react"
 import "./Form.css"
-import TextField from "../TextField/TextField.js"
+import Field from "../Field/Field.js"
 import OptionsList from "../OptionsList/OptionsList.js"
 import Button from "../Button/Button.js"
+
 
 const Form = (props) => {
 
@@ -37,19 +38,19 @@ const Form = (props) => {
     return  <section className="form" >
                 <form onSubmit={handleShipping}>
                     <h2>Rellena el formulario para crear el colaborador.</h2>
-                    <TextField
+                    <Field
                         titulo="Nombre"
                         placeholder="Ingresar nombre"
                         required
                         valor={nombre}
                         actualizarValor={actualizarNombre} />
-                    <TextField
+                    <Field
                         titulo="Puesto"
                         placeholder="Ingresar puesto"
                         required
                         valor={puesto}
                         actualizarValor={actualizarPuesto} />
-                    <TextField
+                    <Field
                         titulo="Foto"
                         placeholder="Ingresar enlace de foto"
                         required
@@ -63,18 +64,19 @@ const Form = (props) => {
                 </form>
                 <form onSubmit={manejarNuevoEquipo}>
                     <h2>Rellena el formulario para crear el equipo.</h2>
-                    <TextField
+                    <Field
                         titulo="Título"
                         placeholder="Ingresar titulo"
                         required
                         valor={titulo}
                         actualizarValor={actualizarTitulo} />
-                    <TextField
+                    <Field
                         titulo="Color"
                         placeholder="Ingresar el color en Hex"
                         required
                         valor={color}
-                        actualizarValor={actualizarColor} />
+                        actualizarValor={actualizarColor}
+                        type="color" />
                     <Button texto="Registrar Equipo" />
                     </form>
             </section>

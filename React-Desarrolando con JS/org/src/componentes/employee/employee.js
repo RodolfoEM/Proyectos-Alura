@@ -1,9 +1,9 @@
 import "./employee.css"
-import { AiFillCloseCircle } from "react-icons/ai"
+import { AiFillCloseCircle, AiOutlineHeart,  AiFillHeart} from "react-icons/ai"
 
 const Employee = (props) => {
-    const {nombre,puesto,foto,equipo, id} = props.datos;
-    const {colorPrimario, eliminarColaborador } = props;
+    const {nombre,puesto,foto,equipo, id, fav} = props.datos;
+    const {colorPrimario, eliminarColaborador, like } = props;
     return <div className="employee-div">
         <AiFillCloseCircle className="eliminar" onClick={() => eliminarColaborador(id)} />
         <div className="header" style={{backgroundColor:colorPrimario}}>
@@ -12,6 +12,9 @@ const Employee = (props) => {
         <div className="info">
             <h4>{nombre}</h4>
             <h5>{puesto}</h5>
+            {   // Usando operador ternario: condicion ? verdadero : falso
+                fav ? <AiFillHeart color="Red" onClick={() => like(id)} /> : <AiOutlineHeart onClick={() => like(id)} />
+            }
         </div>
     </div>
 }
