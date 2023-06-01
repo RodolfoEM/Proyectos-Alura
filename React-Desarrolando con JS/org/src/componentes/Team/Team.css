@@ -4,6 +4,13 @@
     box-sizing: border-box;/*Para evitar que se desborde el elemento por el padding, colocamos esta propiedad*/
     text-align: center;
     font-size: 32px;
+    position: relative;
+}
+
+.input-color{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
 .team h3{
