@@ -1,10 +1,26 @@
 import React from "react";
+import styled from "styled-components";
 import logo from "../../assets/images/logo.svg";
+import { colorPrimario } from "../UI/Variables.js"
+
+const StyledHeader = styled.nav`
+    background-color: ${colorPrimario};
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15vw;
+    height: 10vh;
+    align-items: center;
+`
+
+const Logo = styled.img `
+  height: 50px;
+  width: 50px;
+`
 
 const Header = () => {
   return (
-    <div className="header">
-      <img className="imagen-logo" src={logo} alt="Logo Smart Bank" />
+    <StyledHeader>
+      <Logo src={logo} alt="Logo Smart Bank" />
       <div>
         <a className="btn-secundario" href="https://google.com">
           Ayuda
@@ -13,7 +29,7 @@ const Header = () => {
           Salir
         </a>
       </div>
-    </div>
+    </StyledHeader>
   );
 };
 
