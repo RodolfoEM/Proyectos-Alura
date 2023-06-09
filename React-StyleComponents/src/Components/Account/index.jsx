@@ -5,7 +5,7 @@ import ojo from "../../assets/images/ojo.svg";
 import dinero from "../../assets/images/dinero.svg";
 import styled from "styled-components";
 
-import { Icon, Btn, Box, Saldo, Detalle } from "../UI";
+import { Icon, Btn, Box, Saldo, Detalle, IconoTema } from "../UI";
 
 //Aquí aplicamos el concepto de herencia, en donde IconMargin hereda de Icon las propiedades y añade un margen-top
 const IconoMargin = styled(Icon)`
@@ -25,7 +25,7 @@ const Account = () => {
       <div style={{ fontSize: "26px", padding: "20px 0" }}>
         Saldo disponible
         <span>
-          <Icon src={dinero} alt="Icono de saldo" />
+          <IconoTema src={dinero} alt="Icono de saldo" />
         </span>
         {toggleState ? (
           <Saldo>
