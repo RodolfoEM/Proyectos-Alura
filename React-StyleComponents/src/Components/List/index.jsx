@@ -4,7 +4,6 @@ import { lista } from "../../info.js"
 import Card from "../Card";
 
 const List = () => {
-    console.log(lista);
     return <Box>
         {
             lista.cargos.map((cargo, i) => {
