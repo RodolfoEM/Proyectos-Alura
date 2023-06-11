@@ -3,8 +3,12 @@ import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { useState } from "react";
 
 function FormSignUp() {
+
+    const [name, setName] = useState("")
+
     return(
     <form>
         <TextField
@@ -13,6 +17,12 @@ function FormSignUp() {
             variant="outlined"
             fullWidth
             margin="normal"
+            // COn el siguiente onChange obtenemos la información ingresada por el usuario
+            onChange={(e) => {
+                console.log(e.target.value)
+                setName(e.target.value)
+            }}
+            value={name}
             />
         <TextField
             id="lastName"
