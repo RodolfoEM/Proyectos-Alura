@@ -5,19 +5,38 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { useState } from "react";
 
-function FormSignUp() {
-
+function FormSignUp({handleSubmit}) {
     const [name, setName] = useState("")
     const [lastName, setlastName] = useState("")
     const [email, setEmail] = useState("")
     const [prom, setProm] = useState(true)
     const [nov, setNov] = useState(false)
 
+    const [errors, setErrors] = useState({
+        name: {
+            error: false,
+            message: "Deben ser almenos 3 caracteres"
+        }
+    })
+
+    const validarNombre = (nombre) => {
+        if(nombre.length >= 3) {
+            return {name: { error: false, message: ""}}
+        } else{
+            return {name: { error: true, message: "Deben ser almenos 3 caracteres"}}
+        }
+    }
 
     return(
     <form onSubmit={(e) => {
         e.preventDefault()
-        console.log({name,lastName,email,prom,nov})
+        handleSubmit({
+            name,
+            lastName,
+            email,
+            prom,
+            nov
+        })
         }}>
         <TextField
             id="name"
@@ -30,6 +49,11 @@ function FormSignUp() {
                 setName(e.target.value)
             }}
             value={name}
+            error={errors.name.error}
+            helperText={errors.name.error ? errors.name.message : ""}
+            onBlur={(e) => {
+                setErrors(validarNombre(e.target.value))
+            }}
             />
         <TextField
             id="lastName"
@@ -41,6 +65,9 @@ function FormSignUp() {
                 setlastName(e.target.value)
             }}
             value={lastName}
+            onBlur={(e) => {
+                setErrors(validarNombre(e.target.value))
+            }}
             />
         <TextField
             id="email"
