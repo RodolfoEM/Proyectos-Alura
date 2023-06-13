@@ -15,9 +15,13 @@ const Form = () => {
   const [step, setStep] = useState(0);
   const [pasos, setPasos] = useState({});
 
-  useEffect(() => {
-    console.log("useEffect");
-  })
+  useEffect(async() => {
+    try {
+      const data = await fetch
+    } catch (e){
+      console.log(e);
+    }
+  }, [step])
 
   //step = 0 => <DatosUsuario/>
   //step = 1 => <DatosPersonales />
